@@ -1,6 +1,5 @@
 package tarea03;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -8,14 +7,15 @@ public class Tarea03 {
 
 	public static void main(String[] args) {
 		
-		//if (args.length != 1) {
-			
-		//}
+		if (args.length != 1) {
+			System.out.println("Por favor introduce un argumento valido"); //se comprueba si el argumento facilitado es valido
+			return;
+		}
 		
+		String archivo = args[0];
 		try {
-			String fichanalizar = "archivo_corto.bin";
-			File fichero = new File("." + File.separator + "src" + File.separator + "tarea03" + File.separator + "firmas" + File.separator + fichanalizar);
-			FileInputStream fileIn = new FileInputStream(fichero);
+
+			FileInputStream fileIn = new FileInputStream(archivo);
 			
 			
 			byte [] contador = new byte [4];
